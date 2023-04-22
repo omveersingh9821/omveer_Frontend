@@ -1,23 +1,25 @@
-import logo from './logo.svg';
+//What Simple List component does ?
+// 1. It takes an array of objects as a prop.
+// 2. It renders a list of items from the array.
+
+
 import './App.css';
+import List from './SteelEye';
 
 function App() {
+  const list = [
+    {
+      text:"List 1"
+    },{
+      text:"List 2"
+    },{
+      text:"List 3"
+    }
+
+  ]
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <List items={list}/>
     </div>
   );
 }
