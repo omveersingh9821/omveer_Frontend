@@ -1,6 +1,10 @@
 import React, { useState, useEffect, memo } from "react";
 import PropTypes from "prop-types";
 
+//What Simple List component does ?
+// 1. It takes an array of objects as a prop.
+// 2. It renders a list of items from the array.
+
 // Single List Item
 const WrappedSingleListItem = ({ index, isSelected, onClickHandler, text }) => {
   return (

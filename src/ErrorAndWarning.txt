@@ -1,0 +1,40 @@
+Errors And Warning And Fixed Code
+
+
+In the WrappedSingleListItem component, the onClickHandler prop is not called correctly.
+It should be passed as a function, but instead, it's being called immediately with the index parameter. 
+To fix this, change onClickHandler(index) to () => onClickHandler(index).
+
+In the SingleListItem component, the isSelected prop is not passed correctly 
+to the WrappedSingleListItem component. It should be passed as a boolean, but instead, 
+it's being passed as the selectedIndex state variable.
+To fix this, change isSelected={selectedIndex} to isSelected={selectedIndex === index}.
+
+In the WrappedListComponent component, the items prop type is not defined correctly. 
+There is no function "shapeOf" so instead of it we will write "shape"
+There is no PropTypes.array  so we will write PropTypes.arrayOf(PropTypes.shape({ ... })).
+
+
+In the WrappedListComponent component, the setSelectedIndex state variable is being set incorrectly.
+It should be set using the useState hook like this: const [selectedIndex, setSelectedIndex] = useState(-1);.
+
+In the WrappedListComponent component, the useEffect hook is missing a dependency array. 
+It should have [items] as its dependency array to properly reset the selectedIndex state variable 
+when the items prop changes.
+
+In the WrappedListComponent component, the items prop is not being checked for null or undefined 
+before being used in the useEffect hook. To fix this, change the useEffect hook to this:
+
+
+useEffect(() => {
+setSelectedIndex(-1);
+}, [items ]);
+
+
+In the WrappedListComponent component, the items prop default value is not defined correctly. 
+It should be an empty array, not null. To fix this, change items: null to items: [].
+
+
+
+
+
